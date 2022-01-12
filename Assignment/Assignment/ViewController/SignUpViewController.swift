@@ -4,10 +4,11 @@
 //
 //  Created by Banana on 10/1/2022.
 //
-
+import SwiftUI
 import UIKit
 import FirebaseAuth
 import Firebase
+
 
 class SignUpViewController: UIViewController {
     
@@ -71,31 +72,31 @@ class SignUpViewController: UIViewController {
         }
         else {
             
-            // Create cleaned versions of the data
+            // Create the data
             let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            // Create the user
+            // Create user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
                 // Check for errors
                 if err != nil {
                     
-                    // There was an error creating the user
+                    // failed to create user
                     self.showError("Error creating user")
                 }
                 else {
                     
-                    // User was created successfully, now store the first name and last name
+                    // succeeed to create user and storing first and last name.
                     let db = Firestore.firestore()
                     
                     db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
                         
                         if error != nil {
                             // Show error message
-                            self.showError("Error saving user data")
+                            self.showError("Please try again!")
                         }
                     }
                     

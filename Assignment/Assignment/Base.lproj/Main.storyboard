@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cx5-I2-6ye">
-                                <rect key="frame" x="40" y="713.5" width="334" height="108.5"/>
+                                <rect key="frame" x="40" y="562" width="334" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qq9-uq-NK6">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -31,16 +31,31 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMz-Wu-Haa">
-                                        <rect key="frame" x="0.0" y="70" width="334" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                         <connections>
                                             <segue destination="C94-TE-X2Z" kind="show" id="WdG-Qs-HNJ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-ic-Yio">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login with TouchID"/>
+                                        <connections>
+                                            <action selector="FaceTouchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFt-dY-jvR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lua-9e-iey">
+                                        <rect key="frame" x="0.0" y="210" width="334" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login with FaceID"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hMz-Wu-Haa" firstAttribute="height" secondItem="Qq9-uq-NK6" secondAttribute="height" multiplier="0.775" id="Ak9-3m-2nt"/>
+                                    <constraint firstItem="LBx-ic-Yio" firstAttribute="height" secondItem="Qq9-uq-NK6" secondAttribute="height" id="KAC-SF-hUC"/>
+                                    <constraint firstItem="Lua-9e-iey" firstAttribute="height" secondItem="Qq9-uq-NK6" secondAttribute="height" id="bLa-Ns-fVJ"/>
+                                    <constraint firstItem="hMz-Wu-Haa" firstAttribute="height" secondItem="Qq9-uq-NK6" secondAttribute="height" id="oxo-gU-LcP"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -54,8 +69,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="dkw-UR-tiD"/>
                     <connections>
+                        <outlet property="faceIDButton" destination="Lua-9e-iey" id="jT4-gu-yC8"/>
                         <outlet property="loginButton" destination="hMz-Wu-Haa" id="LsN-65-zOG"/>
                         <outlet property="signUpButton" destination="Qq9-uq-NK6" id="qQN-46-D5X"/>
+                        <outlet property="touchIDButton" destination="LBx-ic-Yio" id="oQI-gj-BD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,7 +111,7 @@
                                             <action selector="loginTapped:" destination="C94-TE-X2Z" eventType="touchUpInside" id="Omb-Pf-en8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-Bl-ZBm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-Bl-ZBm">
                                         <rect key="frame" x="0.0" y="180" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -169,7 +186,7 @@
                                             <action selector="signUpTapped:" destination="Djg-8n-RNT" eventType="touchUpInside" id="ukh-Jh-5tI"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiY-D6-ls0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiY-D6-ls0">
                                         <rect key="frame" x="0.0" y="270" width="324" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -231,6 +248,7 @@
                         <viewLayoutGuide key="safeArea" id="f5p-L0-Uvi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mDV-Mz-pzq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfe-iH-Hf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app uses FaceID to confirm your ifentity</string>
 </dict>
 </plist>

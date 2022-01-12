@@ -19,6 +19,7 @@
 		E58C8883278CAAA500D87648 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8882278CAAA500D87648 /* Constants.swift */; };
 		E58C8890278CAF0000D87648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58C888E278CAEFF00D87648 /* LaunchScreen.storyboard */; };
 		E58C8893278CAF0600D87648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58C8891278CAF0600D87648 /* Main.storyboard */; };
+		E5D19C9B278D7C4A00C06C65 /* ICON_VERSION7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E5D19C9A278D7C4A00C06C65 /* ICON_VERSION7.mp4 */; };
 		E72F6DEE7D42BB4BA8B4A305 /* Pods_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5213B36C0CE2AF8457EA140 /* Pods_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		E58C8882278CAAA500D87648 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E58C888F278CAEFF00D87648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E58C8892278CAF0600D87648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5D19C9A278D7C4A00C06C65 /* ICON_VERSION7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ICON_VERSION7.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		E58C885F278C8D2D00D87648 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				E5D19C98278D7BE500C06C65 /* Media */,
 				E58C887B278C949100D87648 /* Assistants */,
 				E58C8860278C8D2D00D87648 /* AppDelegate.swift */,
 				E58C8862278C8D2D00D87648 /* SceneDelegate.swift */,
@@ -115,6 +118,14 @@
 				E58C8882278CAAA500D87648 /* Constants.swift */,
 			);
 			path = Assistants;
+			sourceTree = "<group>";
+		};
+		E5D19C98278D7BE500C06C65 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				E5D19C9A278D7C4A00C06C65 /* ICON_VERSION7.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		EE595792B20EA4065364F5A1 /* Frameworks */ = {
@@ -185,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D19C9B278D7C4A00C06C65 /* ICON_VERSION7.mp4 in Resources */,
 				E58C8890278CAF0000D87648 /* LaunchScreen.storyboard in Resources */,
 				E58C8881278C9BC500D87648 /* GoogleService-Info.plist in Resources */,
 				E58C886A278C8D2E00D87648 /* Assets.xcassets in Resources */,

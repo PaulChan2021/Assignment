@@ -35,6 +35,14 @@ class Designs {
         button.tintColor = UIColor.white
     }
     
+    static func styleTouchFaceButton(_ button:UIButton) {
+        
+        // Filled rounded corner style
+        button.backgroundColor = UIColor.init(red: 0/255, green: 153/255, blue: 255/255, alpha: 1)
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.white
+    }
+    
     static func styleHollowButton(_ button:UIButton) {
         
         // Hollow rounded corner style
@@ -43,7 +51,7 @@ class Designs {
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.black
     }
-    
+
     static func isPasswordValid(_ password : String) -> Bool {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}")
