@@ -14,23 +14,26 @@ class ViewController: UIViewController {
     var VideoPlayer:AVPlayer?
     var Videolayer:AVPlayerLayer?
     
+    var context = LAContext()
+    var err : NSError?
+    
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
     
-    @IBOutlet weak var touchIDButton: UIButton!
-    
     @IBOutlet weak var faceIDButton: UIButton!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do setup after loading the view.
         setUpElements()
-        context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
+        // store data and retrieve data from core data
+     
     }
     override func viewWillAppear(_ animated: Bool) {
-        // video for login backgroud
+        // video for login background
         backgroundSetup()
     }
     
@@ -38,7 +41,6 @@ class ViewController: UIViewController {
         
         Designs.styleFilledButton(signUpButton)
         Designs.styleHollowButton(loginButton)
-        Designs.styleTouchFaceButton(touchIDButton)
         Designs.styleTouchFaceButton(faceIDButton)
     }
     
@@ -65,74 +67,73 @@ class ViewController: UIViewController {
         VideoPlayer?.playImmediately(atRate: 0.3)
     }
     
-//    @IBAction func FaceTouchTapped(_ sender: Any) {
-//        let context = LAContext()
+    @IBAction func faceTouchTapped(_ sender: Any) {
 
-//        var error:NSError?
+        let context = LAContext()
+
+        var error:NSError?
         
-//        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             
             // Device can user bio authentication
-//            context.evaluatePolicy(
-//                LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Access requires authentication", reply: {(success, error) in DispatchQueue.main.async {
-//                    if let err = error {
-//                        switch err._code {
+            context.evaluatePolicy(
+                LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Access requires authentication", reply: {(success, error) in DispatchQueue.main.async {
+                    if let err = error {
+                        switch err._code {
+
+                        case LAError.Code.systemCancel.rawValue:
+                            self.notifyUser("Session cancelled", err: err.localizedDescription)
                             
-//                        case LAError.Code.systemCancel.rawValue:
-//                            self.notifyUser("Session cancelled", err: err.localizedDescription)
-                            
-//                        case LAError.Code.userCancel.rawValue:
-//                            self.notifyUser("Please try again", err: err.localizedDescription)
+                        case LAError.Code.userCancel.rawValue:
+                            self.notifyUser("Please try again", err: err.localizedDescription)
                         
-//                        case LAError.Code.userFallback.rawValue:
-//                            self.notifyUser("Authentication", err: "Password option selected")
-//                        default:
-//                            self.notifyUser("Authentication failed", err: err.localizedDescription)
-//                        }
-//                    } else {
-//                       self.notifyUser("Authentication Successful", err: "You now have full access")
-//                    }
-//                }
-//            })
-//        } else {
+                        case LAError.Code.userFallback.rawValue:
+                            self.notifyUser("Authentication", err: "Password option selected")
+                        default:
+                            self.notifyUser("Authentication failed", err: err.localizedDescription)
+                        }
+                    } else {
+                        // The app will transition to Homepage if login successful
+                       self.notifyUser("Authentication Successful", err: "You now have full access")
+                        
+                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                        
+                        self.view.window?.rootViewController = homeViewController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                }
+            })
+        } else {
             // Device can't use bio
-//            if let err = error {
-//                switch err.code {
+            if let err = error {
+                switch err.code {
                     
-//                case LAError.Code.biometryNotEnrolled.rawValue:
-//                    notifyUser("User is not enrolled", err: err.localizedDescription)
+                case LAError.Code.biometryNotEnrolled.rawValue:
+                    notifyUser("User is not enrolled", err: err.localizedDescription)
                     
-//                case LAError.Code.passcodeNotSet.rawValue:
-//                    notifyUser("A passcode has not been set", err: err.localizedDescription)
+                case LAError.Code.passcodeNotSet.rawValue:
+                    notifyUser("A passcode has not been set", err: err.localizedDescription)
                 
-//                case LAError.Code.biometryNotAvailable.rawValue:
-//                    notifyUser("Biometric authentication not available", err: err.localizedDescription)
-//                default:
-//                    notifyUser("Unknown error", err: err.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-//    func notifyUser(_ msg: String, err: String?) {
-//        let alert = UIAlertController(title: msg, message: err, preferredStyle: .alert)
-        
-//        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        
-//        alert.addAction(cancelAction)
-        
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    var context = LAContext()
-    enum AuthenticationState {
-        case loggedin, loggedout
-    }
-    var state = AuthenticationState.loggedout {
-        didSet {
-            touchIDButton.isHighlighted = state == .loggedin  // The button text changes on highlight.
-            faceIDButton.isHidden = (state == .loggedin) || (context.biometryType != .faceID)
-            
+                case LAError.Code.biometryNotAvailable.rawValue:
+                    notifyUser("Biometric authentication not available", err: err.localizedDescription)
+                default:
+                    notifyUser("Unknown error", err: err.localizedDescription)
+                }
+            }
         }
+    }
+    func notifyUser(_ msg: String, err: String?) {
+        let alert = UIAlertController(title: msg, message: err, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+
+        
     }
 
 }
+    
 

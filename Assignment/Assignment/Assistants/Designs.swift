@@ -42,7 +42,13 @@ class Designs {
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
     }
-    
+    static func styleMapButton(_ button:UIButton) {
+        
+        // Filled rounded corner style
+        button.backgroundColor = UIColor.init(red: 141/255, green: 51/255, blue: 255/255, alpha: 1)
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.white
+    }
     static func styleHollowButton(_ button:UIButton) {
         
         // Hollow rounded corner style
@@ -50,6 +56,14 @@ class Designs {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.black
+    }
+    
+    static func styleTakePic(_ button:UIButton) {
+        // Map button style
+        button.backgroundColor = .systemBlue
+        button.setTitle("Take Photo", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+
     }
 
     static func isPasswordValid(_ password : String) -> Bool {
