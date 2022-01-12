@@ -25,7 +25,7 @@ class CameraViewController: UIViewController {
         
     }
     @IBAction func didTapButton() {
-        Take = 
+        =
     }
 
 }
