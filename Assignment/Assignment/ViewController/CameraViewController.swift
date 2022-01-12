@@ -25,7 +25,26 @@ class CameraViewController: UIViewController {
         
     }
     @IBAction func didTapButton() {
-        =
+        // You can take pciture when you click on Take a Photo Button
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.sourceType = .camera
+        cameraPicker.delegate = self
+        present(cameraPicker, animated: true)
     }
-
 }
+extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
+                UIImage else {
+                    return
+        }
+        // once we took photo and have a image
+        imageView.image = image
+    }
+}
+

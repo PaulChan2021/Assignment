@@ -22,6 +22,8 @@
 		</dict>
 	</dict>
 	<key>NSFaceIDUsageDescription</key>
-	<string>This app uses FaceID to confirm your ifentity</string>
+	<string>This app uses Face ID to confirm your ifentity</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow access to use your camera!</string>
 </dict>
 </plist>

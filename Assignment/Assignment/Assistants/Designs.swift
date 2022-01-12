@@ -61,7 +61,7 @@ class Designs {
     static func styleTakePic(_ button:UIButton) {
         // Map button style
         button.backgroundColor = .systemBlue
-        button.setTitle("Take Photo", for: .normal)
+        button.setTitle("Take a Photo", for: .normal)
         button.setTitleColor(.white, for: .normal)
 
     }
