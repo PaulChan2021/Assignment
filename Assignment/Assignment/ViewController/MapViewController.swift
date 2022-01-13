@@ -11,6 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var addressLabel: UILabel!
@@ -130,6 +131,28 @@ class MapViewController: UIViewController {
         }
         
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+        // landscape mode
+//        super.viewWillAppear(animated)
+//        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+//    }
+//    override open var shouldAutorotate: Bool {
+//        return false
+//    }
+//    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return .landscapeLeft
+//    }
+    
+//    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+//        return .landscapeLeft
+//    }
+    
+//    extension MapViewController {
+//        override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//           return topViewController?.supportedInterfaceOrientations ?? .allButUpsideDown
+//        }
+//    }
     
     func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
         // center of map
