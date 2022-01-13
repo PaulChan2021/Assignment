@@ -12,6 +12,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
@@ -31,7 +32,16 @@ class CameraViewController: UIViewController {
         cameraPicker.delegate = self
         present(cameraPicker, animated: true)
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        // back to home
+        let mapViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        self.view.window?.rootViewController = mapViewController
+        self.view.window?.makeKeyAndVisible()
+    }
 }
+
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

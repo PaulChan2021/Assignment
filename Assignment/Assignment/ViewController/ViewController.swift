@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import LocalAuthentication
 
+
 class ViewController: UIViewController {
     // AVPlayer item and point to mp4 file and initialize AVplayer
     var VideoPlayer:AVPlayer?
@@ -23,15 +24,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var faceIDButton: UIButton!
     
-    
-    
+
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+    super.viewDidLoad()
         // Do setup after loading the view.
         setUpElements()
         // store data and retrieve data from core data
      
     }
+
     override func viewWillAppear(_ animated: Bool) {
         // video for login background
         backgroundSetup()
@@ -66,8 +68,7 @@ class ViewController: UIViewController {
         // play video in login background
         VideoPlayer?.playImmediately(atRate: 0.3)
     }
-    
-    @IBAction func faceTouchTapped(_ sender: Any) {
+@IBAction func faceTouchTapped(_ sender: Any) {
 
         let context = LAContext()
 
@@ -131,9 +132,9 @@ class ViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
 
-        
     }
 
 }
+
     
 

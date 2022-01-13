@@ -17,6 +17,13 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var goButton: UIButton!
     
+    @IBAction func backMapButton(_ sender: Any) {
+        //back to home
+        let mapViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        self.view.window?.rootViewController = mapViewController
+        self.view.window?.makeKeyAndVisible()
+    }
     let locationManager = CLLocationManager()
     // how big we can see on map
     let regionInMeters: Double = 10000

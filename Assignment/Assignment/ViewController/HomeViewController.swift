@@ -7,6 +7,8 @@
 
 import UIKit
 import AVKit
+import Firebase
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -72,6 +74,18 @@ class HomeViewController: UIViewController {
         
         self.view.window?.rootViewController = mapViewController
         self.view.window?.makeKeyAndVisible()
-        
     }
-}
+    
+    @IBAction func logOutButton(_ sender: Any) {
+                // for log out
+                let ViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ViewController) as? ViewController
+                
+                self.view.window?.rootViewController =
+                ViewController
+                self.view.window?.makeKeyAndVisible()
+                
+            }
+    }
+
+
+

@@ -1,5 +1,5 @@
 //
-//  WishListViewController.swift
+//  EditAddViewController.swift
 //  Assignment
 //
 //  Created by Banana on 13/1/2022.
@@ -8,32 +8,15 @@
 import UIKit
 import CoreData
 
-class WishListViewController: UITableViewController {
-
-    var devices : [WishList]?;
+class EditAddViewController: UITableViewController {
+    var theDevice : WishList?
+    @IBOutlet weak var items: UITextField!
     
-    var managedObjectContext : NSManagedObjectContext? {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            return appDelegate.persistentContainer.viewContext
+    var managedObject : NSManagedObjectContext? {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            return delegate.persistentContainer.viewContext;
         }
-    return nil; }
-    
-    func searchAndReloadTable(query:String){
-        if let managedObjectContext = self.managedObjectContext {
-            let fetchRequest = NSFetchRequest<WishList>(entityName: "WishList");
-            if query.count > 0 {
-                let predicate = NSPredicate(format: "name contains[cd] %@", query)
-                fetchRequest.predicate = predicate
-            }
-            do {
-                let theDevices = try managedObjectContext.fetch(fetchRequest)
-                self.devices = theDevices
-                self.tableView.reloadData()
-            } catch {
-            }
-            
-        }
-        
+        return nil;
     }
     
     override func viewDidLoad() {
@@ -47,26 +30,17 @@ class WishListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            self.searchAndReloadTable(query: "")
-        }
-    
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let devices = self.devices {
-                    return devices.count
-                }
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
-   UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-       
-           return cell;
-    }
-    
+
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

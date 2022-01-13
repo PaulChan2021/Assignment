@@ -60,6 +60,7 @@ class Designs {
     
     static func styleTakePic(_ button:UIButton) {
         // Map button style
+        button.layer.cornerRadius = 25.0
         button.backgroundColor = .systemBlue
         button.setTitle("Take a Photo", for: .normal)
         button.setTitleColor(.white, for: .normal)
