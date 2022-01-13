@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var faceIDButton: UIButton!
     
-
     override func viewDidLoad() {
         
     super.viewDidLoad()
