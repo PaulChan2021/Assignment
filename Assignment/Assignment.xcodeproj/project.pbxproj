@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E581268927902994007541DE /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581268827902994007541DE /* SwiftUI.swift */; };
+		E58126902790379A007541DE /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E581268E2790379A007541DE /* CoreData.xcdatamodeld */; };
+		E581269427903934007541DE /* WishList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581269227903934007541DE /* WishList+CoreDataClass.swift */; };
+		E581269527903934007541DE /* WishList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581269327903934007541DE /* WishList+CoreDataProperties.swift */; };
+		E581269727903ADE007541DE /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581269627903ADE007541DE /* WishListViewController.swift */; };
 		E58C8861278C8D2D00D87648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8860278C8D2D00D87648 /* AppDelegate.swift */; };
 		E58C8863278C8D2D00D87648 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8862278C8D2D00D87648 /* SceneDelegate.swift */; };
 		E58C8865278C8D2D00D87648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8864278C8D2D00D87648 /* ViewController.swift */; };
@@ -30,7 +33,10 @@
 		16171CCFE6A461E5957AD3B6 /* Pods-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		58FE012C8EBC7E7F130028FA /* Pods-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		D5213B36C0CE2AF8457EA140 /* Pods_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E581268827902994007541DE /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
+		E581268F2790379A007541DE /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		E581269227903934007541DE /* WishList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishList+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		E581269327903934007541DE /* WishList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishList+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E581269627903ADE007541DE /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		E58C885D278C8D2D00D87648 /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58C8860278C8D2D00D87648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E58C8862278C8D2D00D87648 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E5812691279038E9007541DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E581269227903934007541DE /* WishList+CoreDataClass.swift */,
+				E581269327903934007541DE /* WishList+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E58C8854278C8D2D00D87648 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +117,8 @@
 				E58C8869278C8D2E00D87648 /* Assets.xcassets */,
 				E58C886E278C8D2E00D87648 /* Info.plist */,
 				E58C8880278C9BC500D87648 /* GoogleService-Info.plist */,
-				E581268827902994007541DE /* SwiftUI.swift */,
+				E5812691279038E9007541DE /* Model */,
+				E581268E2790379A007541DE /* CoreData.xcdatamodeld */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -116,6 +132,7 @@
 				E58C8864278C8D2D00D87648 /* ViewController.swift */,
 				E59D2FB4278F375100711AFE /* CameraViewController.swift */,
 				E59D2FB6278F376200711AFE /* MapViewController.swift */,
+				E581269627903ADE007541DE /* WishListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -263,15 +280,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58C8865278C8D2D00D87648 /* ViewController.swift in Sources */,
+				E581269727903ADE007541DE /* WishListViewController.swift in Sources */,
 				E58C8861278C8D2D00D87648 /* AppDelegate.swift in Sources */,
+				E581269527903934007541DE /* WishList+CoreDataProperties.swift in Sources */,
 				E58C887D278C94A800D87648 /* Designs.swift in Sources */,
+				E58126902790379A007541DE /* CoreData.xcdatamodeld in Sources */,
 				E59D2FB7278F376200711AFE /* MapViewController.swift in Sources */,
 				E58C8875278C8E3A00D87648 /* SignUpViewController.swift in Sources */,
 				E5D89C9E278F275F0098740C /* HomeViewController.swift in Sources */,
-				E581268927902994007541DE /* SwiftUI.swift in Sources */,
 				E58C8878278C8E5400D87648 /* LoginViewController.swift in Sources */,
 				E58C8863278C8D2D00D87648 /* SceneDelegate.swift in Sources */,
 				E58C8883278CAAA500D87648 /* Constants.swift in Sources */,
+				E581269427903934007541DE /* WishList+CoreDataClass.swift in Sources */,
 				E59D2FB5278F375100711AFE /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +512,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E581268E2790379A007541DE /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E581268F2790379A007541DE /* CoreData.xcdatamodel */,
+			);
+			currentVersion = E581268F2790379A007541DE /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E58C8855278C8D2D00D87648 /* Project object */;
 }
