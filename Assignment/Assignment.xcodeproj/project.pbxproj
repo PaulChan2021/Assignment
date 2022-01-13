@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E581268927902994007541DE /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581268827902994007541DE /* SwiftUI.swift */; };
 		E58C8861278C8D2D00D87648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8860278C8D2D00D87648 /* AppDelegate.swift */; };
 		E58C8863278C8D2D00D87648 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8862278C8D2D00D87648 /* SceneDelegate.swift */; };
 		E58C8865278C8D2D00D87648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C8864278C8D2D00D87648 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		16171CCFE6A461E5957AD3B6 /* Pods-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		58FE012C8EBC7E7F130028FA /* Pods-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Assignment/Pods-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		D5213B36C0CE2AF8457EA140 /* Pods_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E581268827902994007541DE /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
 		E58C885D278C8D2D00D87648 /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58C8860278C8D2D00D87648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E58C8862278C8D2D00D87648 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				E58C8869278C8D2E00D87648 /* Assets.xcassets */,
 				E58C886E278C8D2E00D87648 /* Info.plist */,
 				E58C8880278C9BC500D87648 /* GoogleService-Info.plist */,
+				E581268827902994007541DE /* SwiftUI.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				E59D2FB7278F376200711AFE /* MapViewController.swift in Sources */,
 				E58C8875278C8E3A00D87648 /* SignUpViewController.swift in Sources */,
 				E5D89C9E278F275F0098740C /* HomeViewController.swift in Sources */,
+				E581268927902994007541DE /* SwiftUI.swift in Sources */,
 				E58C8878278C8E5400D87648 /* LoginViewController.swift in Sources */,
 				E58C8863278C8D2D00D87648 /* SceneDelegate.swift in Sources */,
 				E58C8883278CAAA500D87648 /* Constants.swift in Sources */,
