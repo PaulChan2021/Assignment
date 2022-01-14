@@ -21,11 +21,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSFaceIDUsageDescription</key>
-	<string>This app uses Face ID to confirm your ifentity</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Please allow access to use your camera!</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your permissions for the location</string>
 </dict>
 </plist>
