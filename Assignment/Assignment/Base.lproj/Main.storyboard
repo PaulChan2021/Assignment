@@ -231,10 +231,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-N2-4E0">
-                                <rect key="frame" x="100" y="344" width="214" height="178"/>
+                                <rect key="frame" x="100" y="344" width="214" height="218.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dA-sh-qJ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="214" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="51.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Nlx-QO-QQy"/>
                                         </constraints>
@@ -245,7 +245,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-ac-cJV">
-                                        <rect key="frame" x="0.0" y="60" width="214" height="31"/>
+                                        <rect key="frame" x="0.0" y="71.5" width="214" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XUR-ID-wFo"/>
                                             <constraint firstAttribute="height" constant="40" id="dkq-Ia-kip"/>
@@ -257,7 +257,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-ZS-ZIR">
-                                        <rect key="frame" x="0.0" y="111" width="214" height="67"/>
+                                        <rect key="frame" x="0.0" y="131.5" width="214" height="87"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Wish List"/>
                                         <connections>
@@ -349,10 +349,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyI-q3-ooG">
-                                <rect key="frame" x="327" y="831" width="67" height="31"/>
+                                <rect key="frame" x="20" y="773" width="78" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
                                     <action selector="backMapButton:" destination="Gou-6Z-A8J" eventType="touchUpInside" id="jwq-JS-ISS"/>
                                 </connections>
